@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
+body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #221359, #54116e, #ab2a70, #ef011f);
+}
+
+.logo {
+    font-family: 'Teko', sans-serif;
+    color: #ef011f;
+}
+
+.gradient {
+    background: linear-gradient(to right, #221359, #54116e, #ab2a70, #ef011f);
+    }
+
+@media (min-width: 768px) {
+    .main {
+    height: 100vh !important;
+    }
+    }
+@media (min-width: 768px) {
+    .gradient {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+}
+

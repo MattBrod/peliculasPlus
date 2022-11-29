@@ -1,0 +1,45 @@
+.titulo {
+  color: white;
+}
+
+.carousel-item {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 55vh;
+  scroll-behavior: smooth;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  z-index: 3;
+  width: 3vw;
+}
+
+.poster {
+  height: 50vh;
+  min-width: 250px;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+.fill {
+  height: 50vh;
+  min-width: 250px;
+}
+
+.poster:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item {
+    overflow: scroll;
+    height: 50vh;
+  }
+  .poster:hover {
+    transform: none;
+    z-index: 2;
+  }
+}

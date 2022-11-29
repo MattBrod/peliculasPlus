@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+.pallete {background: linear-gradient(to right, #221359, #54116e, #ab2a70, #ef011f);}
+
+/* NAVBAR */
+nav {
+    font-family: 'Roboto', sans-serif;
+}
+
+#barra {
+    background: #221359;
+}
+
+.logo {
+    font-family: 'Teko', sans-serif;
+    color: #ef011f;
+}
+
+.dropdown-menu {
+  max-height: 40vh;
+  overflow-y: auto;
+  background: #4d4373;
+}
+
+.dropdown-item {
+  background: #4d4373;
+  color: #9793a6;
+}
+
+#search {
+    background: #4d4373;
+    border: #221359;
+    border-radius: 20px 0px 0px 20px;
+    color: white;
+}
+
+#search::placeholder {
+    color: #9793a6;
+}

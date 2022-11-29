@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<!-- PELI PRINCIPAL -->
+<div id="maincarouselControls" class="main mb-3 carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item backdrop" data-bs-interval="10000" *ngFor="let peli of data.results.slice(0,5); let i = index" [ngClass]="{'active': i === 1}" [ngStyle]="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%) , url(' + haha+peli.backdrop_path + ')'}">
+      <div class="carousel-caption pb-0">
+        <a href="detail" (click)="setMovieDetails(peli.id)"><h1 class="display-6 fw-bold mb-3">{{peli.title}}</h1></a>
+        <p class="mb-0">{{peli.overview}}</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#maincarouselControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#maincarouselControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<app-carousel></app-carousel>
+
+<app-footer></app-footer>

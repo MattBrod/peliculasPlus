@@ -1,0 +1,25 @@
+<div class="container mb-2">
+  <div class="titulo">
+    <h3>Popular</h3>
+  </div>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div #widgetsContent class="carousel-item active d-flex align-items-center">
+
+        <div class="poster" *ngFor="let peli of data.results" [ngStyle]="{'background-image':'url(' + haha+peli.poster_path + ')'}">
+          <a href="detail" (click)="setMovieDetails(peli.id)"><div class="fill"></div></a>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" (click)="scrollLeft()">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+    </button>
+    <button class="carousel-control-next" type="button" (click)="scrollRight()">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+    </button>
+  </div>
+  </div>
