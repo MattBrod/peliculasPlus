@@ -16,10 +16,6 @@ export class UserService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  loginWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
-  }
-
   logout() {
     return signOut(this.auth);
   }

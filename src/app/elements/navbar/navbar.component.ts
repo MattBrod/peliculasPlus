@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { TmdbService } from 'src/app/tmdb.service';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +13,11 @@ export class NavbarComponent implements OnInit {
   data: any;
 
 
-  constructor(private service: TmdbService) { }
+  constructor(
+    private service: TmdbService,
+    private userService: UserService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.service.getGenres()
@@ -28,6 +34,14 @@ export class NavbarComponent implements OnInit {
   searchTerm = (query: any) => {
     sessionStorage.setItem('genreId', this.service.baseUrl + this.service.searchURL + this.service.apiKeyEs + '&query=' + query)
     sessionStorage.setItem('page=', '0');
+  }
+
+  onClick() {
+    this.userService.logout()
+    .then(() => {
+      this.router.navigate(['/home']);
+    })
+    .catch(error => console.log(error));
   }
 
 }
