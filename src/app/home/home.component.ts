@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { TmdbService } from '../tmdb.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   data: any;
   haha: string = this.service.img_url;
 
-  constructor(private service: TmdbService) { }
+  constructor(private service: TmdbService, private elementRef: ElementRef) { }
+  ngAfterViewInit(): void {
+    this.elementRef.nativeElement.ownerDocument
+            .body.style.background = 'black';
+  }
 
   ngOnInit(): void {
     this.service.getTrending()

@@ -11,6 +11,7 @@ import { UserService } from 'src/app/user.service';
 export class NavbarComponent implements OnInit {
 
   data: any;
+  // user: any = this.userService.user
 
 
   constructor(

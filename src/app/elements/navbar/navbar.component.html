@@ -28,7 +28,7 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let genre of data.genres">
-              <a class="dropdown-item" href="genre" (click)="setGenre(genre.id)">{{genre.name}}</a>
+              <a class="dropdown-item text-center" href="genre" (click)="setGenre(genre.id)">{{genre.name}}</a>
             </li>
           </ul>
         </li>
@@ -51,6 +51,9 @@
         <li class="nav-item">
           <a href="register" class="nav-link mx-2">Resgistrarse</a>
         </li>
+        <!-- <li *ngIf="this.user !== null" class="nav-item">
+          <a class="nav-link mx-2"><i class="bi bi-person-circle"></i>{{this.user}}</a>
+        </li> -->
         <li class="nav-item">
           <button (click)="onClick()" class="btn btn-outline-danger mx-2">Logout</button>
         </li>

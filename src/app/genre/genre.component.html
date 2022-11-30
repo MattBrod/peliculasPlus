@@ -6,21 +6,24 @@
 
 <div class="container">
 
-  <div class="no-results" *ngIf="data.results.length == 0">Sin resultados</div>
+  <div class="no-results text-white text-center" *ngIf="data.results.length == 0">SIN RESULTADOS</div>
 
   <div class="row">
-    <div class="col-3"  *ngFor="let peli of data.results">
+    <div class="col-lg-3 col-sm-6 d-flex justify-content-center"  *ngFor="let peli of data.results">
         <app-card [name]="peli.title" [img]="peli.poster_path" [id]="peli.id"></app-card>
     </div>
   </div>
 
-  <nav aria-label="Page navigation example" *ngIf="data.results.length > 0">
-    <ul class="pagination">
-      <li [ngClass]="{'disabled' : this.prevPage < 1}"><a class="page-link" href="genre" (click)="prevMoviePage()">Anterior</a></li>
-      <li class="page-item"><a class="page-link" href="genre">{{data.page}}</a></li>
-      <li [ngClass]="{'disabled' : this.nextPage > this.totalPages}"><a class="page-link" href="genre" (click)="nextMoviePage()">Siguiente</a></li>
-    </ul>
-  </nav>
+  <div class="containers my-4 d-flex justify-content-center">
+    <nav class="text-center" aria-label="Page navigation example" *ngIf="data.results.length > 0">
+      <ul class="pagination">
+        <li [ngClass]="{'disabled' : this.prevPage < 1}"><a class="page-link" href="genre" (click)="prevMoviePage()">Anterior</a></li>
+        <li class="page-item"><a class="page-link number" href="genre">{{data.page}}</a></li>
+        <li [ngClass]="{'disabled' : this.nextPage > this.totalPages}"><a class="page-link" href="genre" (click)="nextMoviePage()">Siguiente</a></li>
+      </ul>
+    </nav>
+  </div>
+
 </div>
 
 
