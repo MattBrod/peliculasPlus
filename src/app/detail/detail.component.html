@@ -1,12 +1,33 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <div class="row">
-    <div class="col-4">
-      <div class="poster" [ngStyle]="{'background':'url(' + haha+data.poster_path + ')'}"></div>
+
+
+    <h1>{{data.title}}</h1>
+
+    <!-- <div *ngIf="this.check === false" >
+      <img *ngFor="let site of providers.results.ES.flatrate"  src="{{haha + site.logo_path}}" alt="">
+    </div> -->
+
+
+    <p>{{data.overview}}</p>
+    <div class="d-flex">
+      <p>Géneros: </p>
+      <p *ngFor="let genre of data.genres">{{genre.name}}</p>
     </div>
-    <div class="col"></div>
-  </div>
+
+    <div *ngFor="let type of this.videos.results">
+      <div *ngIf="type.type === 'Trailer'">
+        <youtube-player videoId="{{type.key}}"> </youtube-player>
+      </div>
+    </div>
+
+
+
+
+
+
+    <img class="poster" src="{{haha+data.poster_path}}" alt="">
 
 </div>
 

@@ -8,12 +8,16 @@ export class TmdbService {
 
   public apiKeyEs = "api_key=9e50c5a0f175a40039150639aa6dfa43&language=es-ES";
   public baseUrl = "https://api.themoviedb.org/3";
+
   private trendingUrl = '/trending/movie/week?';
   private genresUrl = '/genre/movie/list?';
+
   public moviesUrl = '/discover/movie?sort_by=popularity.desc&'
   public img_url = 'https://image.tmdb.org/t/p/original';
-  public searchURL = '/search/movie?'
-  public detailUrl = '/movie/'
+  public searchURL = '/search/movie?';
+  public detailUrl = '/movie/';
+  public providersUrl = "/watch/providers?";
+  public videosUrl = "/videos?"
 
   private url1 = this.baseUrl + this.genresUrl + this.apiKeyEs;
   private url3 = this.baseUrl + this.trendingUrl + this.apiKeyEs;

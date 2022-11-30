@@ -1,9 +1,10 @@
 .container {
-  height: 100vh;
+  height: 86vh;
 }
 
-.poster {
+
+img.poster{
   height: 50vh;
+  width: 250px;
   min-width: 250px;
-  background-size: cover;
 }
