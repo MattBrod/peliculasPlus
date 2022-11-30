@@ -5,30 +5,31 @@
     <div class="col-lg-6 col-md-12">
       <div *ngFor="let type of this.videos.results">
         <div *ngIf="type.type === 'Trailer'">
-          <youtube-player videoId="{{type.key}}"> </youtube-player>
+          <youtube-player videoId="{{ type.key }}"> </youtube-player>
         </div>
       </div>
     </div>
     <div class="col-lg-6 d-flex align-items-center back">
       <div class="row d-flex align-items-center back justify-content-center">
         <div class="col d-flex justify-content-center align-items-center">
-          <img class="poster" src="{{haha+data.poster_path}}" alt="">
+          <img class="poster" src="{{ urlImg + data.poster_path }}" alt="" />
         </div>
         <div class="col back2">
-          <h1>{{data.title}}</h1>
-          <h4>{{data.tagline}}</h4>
+          <h1>{{ data.title }}</h1>
+          <h4>{{ data.tagline }}</h4>
           <div class="d-flex">
-            <p class="px-1" *ngFor="let genre of data.genres">{{genre.name}}</p>
+            <p class="px-1" *ngFor="let genre of data.genres">
+              {{ genre.name }}
+            </p>
           </div>
-          <p class="text-justify">{{data.overview}}</p>
+          <p class="text-justify">{{ data.overview }}</p>
         </div>
       </div>
     </div>
   </div>
-    <!-- <div *ngIf="this.check === false" >
+  <!-- <div *ngIf="this.check === false" >
       <img *ngFor="let site of providers.results.ES.flatrate"  src="{{haha + site.logo_path}}" alt="">
     </div> -->
 </div>
-
 
 <app-footer></app-footer>

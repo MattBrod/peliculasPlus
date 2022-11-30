@@ -6,10 +6,9 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit, AfterViewInit {
-
   formReg: FormGroup;
 
   constructor(
@@ -19,24 +18,23 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
-      password: new FormControl()
-    })
+      password: new FormControl(),
+    });
   }
   ngAfterViewInit(): void {
-    this.elementRef.nativeElement.ownerDocument
-            .body.style.background = 'linear-gradient(to left, #221359, #54116e, #ab2a70, #ef011f)';
+    this.elementRef.nativeElement.ownerDocument.body.style.background =
+      'linear-gradient(to left, #221359, #54116e, #ab2a70, #ef011f)';
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    this.userService.register(this.formReg.value)
-    .then(response => {
-      console.log(response);
-      this.router.navigate(['/login']);
-    })
-    .catch(error => console.log(error))
+    this.userService
+      .register(this.formReg.value)
+      .then((response) => {
+        console.log(response);
+        this.router.navigate(['/login']);
+      })
+      .catch((error) => console.log(error));
   }
-
 }

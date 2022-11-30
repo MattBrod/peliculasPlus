@@ -28,14 +28,31 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let genre of data.genres">
-              <a class="dropdown-item text-center" href="genre" (click)="setGenre(genre.id)">{{genre.name}}</a>
+              <a
+                class="dropdown-item text-center"
+                href="genre"
+                (click)="setGenre(genre.id)"
+                >{{ genre.name }}</a
+              >
             </li>
           </ul>
         </li>
         <li class="nav-item">
           <div class="input-group">
-            <input class="form-control" #search id="search" type="text" placeholder="Buscar"/>
-            <button class="btn btn-outline-secondary" type="button" (click)="searchTerm(search.value)"><a type="button" href="genre"><i class="bi bi-search"></i></a></button>
+            <input
+              class="form-control"
+              #search
+              id="search"
+              type="text"
+              placeholder="Buscar"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="searchTerm(search.value)"
+            >
+              <a type="button" href="genre"><i class="bi bi-search"></i></a>
+            </button>
           </div>
         </li>
       </ul>
@@ -55,7 +72,7 @@
           <a class="nav-link mx-2"><i class="bi bi-person-circle"></i>{{this.user}}</a>
         </li> -->
         <li class="nav-item">
-          <button (click)="onClick()" class="btn btn-outline-danger mx-2">Logout</button>
+          <a (click)="onClick()" class="nav-link mx-2">Logout</a>
         </li>
       </ul>
     </div>

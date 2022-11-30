@@ -7,25 +7,28 @@ import { TmdbService } from '../tmdb.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-
   data: any;
-  haha: string = this.service.img_url;
+  urlImg: string = this.service.img_url;
 
-  constructor(private service: TmdbService, private elementRef: ElementRef) { }
+  constructor(private service: TmdbService, private elementRef: ElementRef) {}
   ngAfterViewInit(): void {
-    this.elementRef.nativeElement.ownerDocument
-            .body.style.background = 'black';
+    this.elementRef.nativeElement.ownerDocument.body.style.background = 'black';
   }
 
   ngOnInit(): void {
-    this.service.getTrending()
-    .subscribe(res => {
+    this.service.getTrending().subscribe((res) => {
       this.data = res;
-    })
+    });
   }
 
   setMovieDetails = (id: any) => {
-    sessionStorage.setItem('movieId', this.service.baseUrl + this.service.detailUrl + id + '?' + this.service.apiKeyEs);
-  }
-
+    sessionStorage.setItem(
+      'movieId',
+      this.service.baseUrl +
+        this.service.detailUrl +
+        id +
+        '?' +
+        this.service.apiKeyEs
+    );
+  };
 }

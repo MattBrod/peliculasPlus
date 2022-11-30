@@ -6,33 +6,35 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, AfterViewInit {
-
   formLogin: FormGroup;
 
-  constructor(private userService: UserService, private router: Router, private elementRef: ElementRef) {
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private elementRef: ElementRef
+  ) {
     this.formLogin = new FormGroup({
       email: new FormControl(),
-      password: new FormControl()
-    })
+      password: new FormControl(),
+    });
   }
   ngAfterViewInit(): void {
-    this.elementRef.nativeElement.ownerDocument
-            .body.style.background = 'linear-gradient(to right, #221359, #54116e, #ab2a70, #ef011f)';
+    this.elementRef.nativeElement.ownerDocument.body.style.background =
+      'linear-gradient(to right, #221359, #54116e, #ab2a70, #ef011f)';
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    this.userService.login(this.formLogin.value)
-    .then(response => {
-      console.log(response);
-      this.router.navigate(['/home']);
-    })
-    .catch(error => console.log(error));
+    this.userService
+      .login(this.formLogin.value)
+      .then((response) => {
+        console.log(response);
+        this.router.navigate(['/home']);
+      })
+      .catch((error) => console.log(error));
   }
-
 }
